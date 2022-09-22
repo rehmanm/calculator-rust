@@ -16,20 +16,14 @@ fn main() {
 }
 
 fn operate(operator: char, first_number: f32, second_number: f32) -> f32 {
-    if operator == '+' {
-        return first_number + second_number;
-    }
-    if operator == '-' {
-        return first_number - second_number;
-    }
-    if operator == '*' {
-        return first_number * second_number;
-    }
-    if operator == '/' {
-        return first_number / second_number;
-    } else {
-        return 0.0;
-    }
+  match operator {
+    '+' => first_number + second_number,
+    '-' => first_number - second_number,
+    '*' => first_number * second_number,
+    '/' => first_number / second_number,
+    _ => 0.0
+  }
+ 
 }
 
 fn output(first_number: f32, operator: char, second_number: f32, result: f32) -> String {
