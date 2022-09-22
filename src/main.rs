@@ -16,14 +16,13 @@ fn main() {
 }
 
 fn operate(operator: char, first_number: f32, second_number: f32) -> f32 {
-  match operator {
-    '+' => first_number + second_number,
-    '-' => first_number - second_number,
-    '*' => first_number * second_number,
-    '/' => first_number / second_number,
-    _ => 0.0
-  }
- 
+    match operator {
+        '+' => first_number + second_number,
+        '-' => first_number - second_number,
+        '*' | 'X' | 'x' => first_number * second_number,
+        '/' => first_number / second_number,
+        _ => panic!("Invalid operator used"),
+    }
 }
 
 fn output(first_number: f32, operator: char, second_number: f32, result: f32) -> String {
